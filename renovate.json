@@ -6,13 +6,13 @@
   "schedule": [
     "before 4am"
   ],
+  "helmv3": {
+    "enabled": false
+  },
   "customManagers": [
   {
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
-    "helmv3": {
-        "enabled": false
-    },
     "fileMatch": [
       "(^|/)values.ya?ml$"
     ],
