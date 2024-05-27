@@ -2,5 +2,23 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ]
+  ],
+  "schedule": [
+    "before 4am"
+  ],
+  "regexManagers": [
+  {
+    "commitMessageTopic": "helm values {{depName}}",
+    "fileMatch": [
+      "(^|/)values.ya?ml$"
+    ],
+    "matchStrings": [
+      "tag: (?<depName>.*)\/(?<currentValue>.*)"
+    ],
+    "datasourceTemplate": "github-tags",
+    "versioningTemplate": "semver",
+    "packageNameTempalte": "openstack-image-manager/{{{depName}}}"
+    "registryUrlTemplate": "https://osism.github.com//"
+    }
+
 }
