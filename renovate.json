@@ -16,8 +16,6 @@
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
-    "packageName": "openstack-image-manager/",
-    "registryUrl": "https://osism.github.com/"
     }
   ]
 }
