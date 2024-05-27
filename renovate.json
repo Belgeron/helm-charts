@@ -6,9 +6,7 @@
   "schedule": [
     "before 4am"
   ],
-  "helmv3": { 
-    "enabled": false
-  },
+  "enableManagers": ["regex" ], 
   "customManagers": [
   {
     "customType": "regex",
