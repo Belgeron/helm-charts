@@ -1,7 +1,8 @@
 ---
 image:
-  repository: dor-sat06ip-01.p.uintra.net:5000/ansc/openstack-image-manager 
-  tag: "latest"
+  repository: '/ansc/openstack-image-manager'
+  tag: latest
+  registry: dor-sat06ip-01.p.uintra.net:5000
   pullPolicy: Always 
 
 imagePullSecrets: []
