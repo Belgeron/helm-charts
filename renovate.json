@@ -8,9 +8,12 @@
   ],
   "customManagers": [
   {
-    "enableManagers": ["regex"],
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
+    {
+    "matchManagers": ["regex"],
+      "enabled": true
+    },
     "fileMatch": [
       "(^|/)values.ya?ml$"
     ],
