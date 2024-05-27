@@ -20,5 +20,5 @@
     "packageNameTempalte": "openstack-image-manager/{{{depName}}}",
     "registryUrlTemplate": "https://osism.github.com//"
     }
-
+  ]
 }
