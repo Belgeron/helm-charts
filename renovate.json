@@ -6,9 +6,9 @@
   "schedule": [
     "before 4am"
   ],
-  "enableManagers": ["regex" ], 
   "customManagers": [
   {
+    "enableManagers": ["regex"],
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
