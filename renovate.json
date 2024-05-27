@@ -10,9 +10,8 @@
   {
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
-    {
     "helmv3": {
-      "enabled": false
+        "enabled": false
     },
     "fileMatch": [
       "(^|/)values.ya?ml$"
