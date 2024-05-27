@@ -16,6 +16,8 @@
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
-    }
+    "packageName": "osism/openstack-image-manager"
+  }
+
   ]
 }
