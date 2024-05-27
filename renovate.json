@@ -6,7 +6,7 @@
   "schedule": [
     "before 4am"
   ],
-  "helm": { 
+  "helmv3": { 
     "enabled": false
   },
   "customManagers": [
