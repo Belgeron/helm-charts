@@ -9,6 +9,9 @@
   "helmv3": {
     "enabled": false
   },
+  "helm-values": {
+    "enabled": false
+  },
   "customManagers": [
   {
     "customType": "regex",
