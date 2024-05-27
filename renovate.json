@@ -3,9 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "schedule": [
-    "before 4am"
-  ],
   "helmv3": {
     "enabled": false
   },
