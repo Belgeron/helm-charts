@@ -14,10 +14,10 @@
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
-      "(^|/)values.ya?ml$"
+      "(^|/)values.ya?ml$", "(^|/)Chart.ya?ml$
     ],
     "matchStrings": [
-      "tag: (?<currentValue>.*)"
+      "tag: (?<currentValue>.*)", "version: (?<currentValue>.*)"
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
