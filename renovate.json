@@ -11,8 +11,8 @@
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     {
-    "matchManagers": ["regex"],
-      "enabled": true
+    "helmv3": {
+      "enabled": false
     },
     "fileMatch": [
       "(^|/)values.ya?ml$"
