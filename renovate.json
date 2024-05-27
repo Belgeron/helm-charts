@@ -6,8 +6,10 @@
   "schedule": [
     "before 4am"
   ],
-  "regexManagers": [
+  "customManagers": [
   {
+    "customType": "regex",
+    "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
       "(^|/)values.ya?ml$"
     ],
@@ -16,7 +18,6 @@
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
-    "packageName": "osism/openstack-image-manager"
   }
 
   ]
