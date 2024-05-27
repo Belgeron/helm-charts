@@ -12,12 +12,12 @@
       "(^|/)values.ya?ml$"
     ],
     "matchStrings": [
-      "tag: (?<depName>.*)\/(?<currentValue>.*)"
+      "tag: (?<currentValue>.*)"
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
-    "packageNameTempalte": "openstack-image-manager/{{{depName}}}",
-    "registryUrlTemplate": "https://osism.github.com/"
+    "packageName": "openstack-image-manager/",
+    "registryUrl": "https://osism.github.com/"
     }
   ]
 }
