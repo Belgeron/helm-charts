@@ -1,7 +1,7 @@
 ---
 image:
   repository: '/ansc/openstack-project-manager'
-  tag: v0.1.0
+  tag: v0.20240417.0
   registry: dor-sat06ip-01.p.uintra.net:5000
   pullPolicy: Always 
 
