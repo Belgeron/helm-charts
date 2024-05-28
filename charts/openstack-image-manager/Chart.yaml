@@ -3,4 +3,4 @@ name: openstack-image-manager
 description: Helm chart for openstack image manager
 type: application
 version: v1.0.0 
-appVersion: "v0.20240218.0"
+appVersion: "v0.20240417.0"
