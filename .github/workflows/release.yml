@@ -32,6 +32,6 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_SKIP_EXISTING: true
-          CR_RELEASE_NAME_TEMPLARTE: "{{ .Name }}-{{ .appVersion }}"
+          CR_RELEASE_NAME_TEMPLATE: "{{ .Name }}-{{ .appVersion }}"
         with:
           charts_dir: charts
