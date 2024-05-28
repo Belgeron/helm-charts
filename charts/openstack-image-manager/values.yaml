@@ -1,7 +1,7 @@
 ---
 image:
   repository: '/ansc/openstack-image-manager'
-  tag: v0.20240314.0 
+  tag: v0.20240417.0
   registry: dor-sat06ip-01.p.uintra.net:5000
   pullPolicy: Always 
 
