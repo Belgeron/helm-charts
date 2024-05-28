@@ -23,7 +23,7 @@
       "(^|/)values.ya?ml$", "(^|/)Chart.ya?ml$"
     ],
     "matchStrings": [
-      "tag: (?<currentValue>.*)", "version: (?<currentValue>.*)"
+      "tag: (?<currentValue>.*)", "appVersion: (?<currentValue>.*)"
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
