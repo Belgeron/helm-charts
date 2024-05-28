@@ -9,6 +9,12 @@
   "helm-values": {
     "enabled": false
   },
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "automerge": true
+    },
+  ],
   "customManagers": [
   {
     "customType": "regex",
