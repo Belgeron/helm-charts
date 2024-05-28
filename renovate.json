@@ -28,7 +28,8 @@
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
     "depNameTemplate": "osism/openstack-image-manager"
-  },
+  }
+  ],
   "customManagers": [
   {
     "customType": "regex",
@@ -43,6 +44,5 @@
     "versioningTemplate": "semver",
     "depNameTemplate": "osism/openstack-project-manager"
   }
-
   ]
 }
