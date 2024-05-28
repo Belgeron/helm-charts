@@ -20,15 +20,28 @@
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
-      "(^|/)values.ya?ml$", "charts/openstack-image-manager/Chart.ya?ml$"
+      "charts/openstack-image-manager/values.ya?ml$", "charts/openstack-image-manager/Chart.ya?ml$"
     ],
     "matchStrings": [
       "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
     ],
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
-    "depNameTemplate": "openstack-image-manager",
-    "registryUrlTemplate": "https://github.com/osism"
+    "depNameTemplate": "osism/openstack-image-manager"
+  },
+    "customManagers": [
+  {
+    "customType": "regex",
+    "description": "Update VERSION of Helm values.yaml",
+    "fileMatch": [
+      "charts/openstack-project-manager/values.ya?ml$", "charts/openstack-project-manager/Chart.ya?ml$"
+    ],
+    "matchStrings": [
+      "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
+    ],
+    "datasourceTemplate": "github-tags",
+    "versioningTemplate": "semver",
+    "depNameTemplate": "osism/openstack-project-manager"
   }
 
   ]
