@@ -15,7 +15,7 @@
       "automerge": true
     }
   ],
-  "customManagers": [
+  "imagerManagers": [
   {
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
@@ -30,7 +30,7 @@
     "depNameTemplate": "osism/openstack-image-manager"
   }
   ],
-  "customManagers": [
+  "projectManagers": [
   {
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
