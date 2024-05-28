@@ -2,5 +2,8 @@ apiVersion: v2
 name: openstack-project-manager
 description: Helm chart for openstack project manager
 type: application
-version: v0.1.0 
+version: v0.1.1 
 appVersion: "v0.1.0"
+home: https://osism.tech/docs/guides/operations-guide/openstack/tools/project-manager
+sources:
+  - https://github.com/osism/openstack-project-manager
