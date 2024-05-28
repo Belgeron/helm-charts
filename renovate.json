@@ -11,9 +11,6 @@
   },
   "customManagers": [
   {
-    "matchUpdateTypes": ["minor", "patch"],
-    "matchCurrentVersion": "!/^0/",
-    "automerge": true,
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
