@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: {{ .Release.Name }}-manager
+   labels:
+     app: openstack-project-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openstack-project-manager
+  template:
+    metadata:
+      labels:
+        app: openstack-project-manager
+    spec:
+      containers:
+         - name: {{ .Chart.Name }}  
+           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}" 
+           imagePullPolicy: {{ .Values.image.pullPolicy }}
+           env:
+           - name: CLOUD
+             value: "{{ required "A valid .Values.cloud entry required!" .Values.cloud }}"
+           - name: SCHEDULE
+             value: "{{ .Values.schedule | default "0 * * * *" }}"
+           volumeMounts:
+           - mountPath: "/openstack-project-manager/clouds.yml"
+             subPath: clouds.yml
+             name: clouds-credentials
+             readOnly: true
+      volumes:
+        - name: clouds-credentials
+          secret:
+            secretName: openstack-project-manager-config
+            items:
+              - key: clouds.yml
+                path: clouds.yml
