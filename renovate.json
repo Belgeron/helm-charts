@@ -20,7 +20,7 @@
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
     "fileMatch": [
-      "(^|/){{depName}}/values.ya?ml$", "(^|/){{depName}}/Chart.ya?ml$"
+      "(^|/{{depName}}/)values.ya?ml$", "(^|/charts/{{depName}/Chart.ya?ml$"
     ],
     "matchStrings": [
       "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
