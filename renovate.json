@@ -29,7 +29,7 @@
     "versioningTemplate": "semver",
     "depNameTemplate": "osism/openstack-image-manager"
   },
-    "customManagers": [
+  "customManagers": [
   {
     "customType": "regex",
     "description": "Update VERSION of Helm values.yaml",
