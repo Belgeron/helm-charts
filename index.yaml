@@ -3,6 +3,16 @@ entries:
   openstack-image-manager:
   - apiVersion: v2
     appVersion: v0.20240417.0
+    created: "2024-05-28T12:49:56.270914643Z"
+    description: Helm chart for openstack image manager
+    digest: efe56c89128b7387a3a0053826a336965f47de706b63d93b02f4bdfd519d5f14
+    name: openstack-image-manager
+    type: application
+    urls:
+    - https://github.com/Belgeron/helm-charts/releases/download/openstack-image-manager-v0.20240417.1/openstack-image-manager-v0.20240417.1.tgz
+    version: v0.20240417.1
+  - apiVersion: v2
+    appVersion: v0.20240417.0
     created: "2024-05-28T10:46:27.101675617Z"
     description: Helm chart for openstack image manager
     digest: 468da98f25f773c733d6c790efd409b6053003895dab20cd12bed511ef3b5bf8
@@ -22,4 +32,4 @@ entries:
     urls:
     - https://github.com/Belgeron/helm-charts/releases/download/openstack-project-manager-v0.1.0/openstack-project-manager-v0.1.0.tgz
     version: v0.1.0
-generated: "2024-05-28T11:04:09.357876239Z"
+generated: "2024-05-28T12:49:56.401304016Z"
