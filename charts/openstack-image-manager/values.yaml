@@ -1,11 +1,8 @@
 ---
 image:
-  repository: '/ansc/openstack-image-manager'
+  repository: 'dor-sat06ip-01.p.uintra.net:5000/ansc/openstack-image-manager'
   tag: v0.20240417.0
-  registry: dor-sat06ip-01.p.uintra.net:5000
   pullPolicy: Always 
-
-imagePullSecrets: []
 
 # Set the schedule for every run, it's in crontab format, defaults to every sunday at 1am if not set  
 schedule: "0 1 * * 7"
