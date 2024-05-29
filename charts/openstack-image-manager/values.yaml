@@ -1,6 +1,8 @@
 ---
 image:
-  repository: 'https://registry.gitlab.com/andischrogl/registry/openstack-image-manager'
+  # Use gitlab.com as registry
+  registry: registry.gitlab.com
+  repository: andischrogl/registry/openstack-image-manager
   tag: v0.20240417.0
   pullPolicy: Always 
 
