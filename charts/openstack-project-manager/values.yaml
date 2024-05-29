@@ -1,8 +1,10 @@
----
+## OSISM Openstack Project Manager
+##
+##
 image:
   # Use gitlab.com as registry
   registry: registry.gitlab.com
-  repository: andischrogl/registry/openstack-project-manager
+  image: andischrogl/registry/openstack-project-manager
   tag: v1.0.1
   pullPolicy: Always 
 
