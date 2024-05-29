@@ -1,7 +1,7 @@
 ---
 image:
-  repository: 'dor-sat06ip-01.p.uintra.net:5000/ansc/openstack-project-manager'
-  tag: v0.1.0
+  repository: 'https://registry.gitlab.com/andischrogl/registry/openstack-project-manager'
+  tag: v1.0.1
   pullPolicy: Always 
 
 # Set the schedule for every run, it's in crontab format, defaults to every sunday at 1am if not set  
