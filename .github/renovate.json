@@ -3,31 +3,10 @@
   "extends": [
     "config:recommended"
   ],
-  "helmv3": {
-    "enabled": true 
-  },
-  "helm-values": {
-    "enabled": true 
-  },
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],
       "automerge": true
     }
-  ],
-  "customManagers": [
-  {
-    "customType": "regex",
-    "description": "Update Image Manager Helm",
-    "fileMatch": [
-      "charts/openstack-image-manager/values.ya?ml$", "charts/openstack-image-manager/Chart.ya?ml$"
-    ],
-    "matchStrings": [
-      "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
-    ],
-    "datasourceTemplate": "github-tags",
-    "versioningTemplate": "semver",
-    "depNameTemplate": "osism/openstack-image-manager"
-  }
   ]
 }
