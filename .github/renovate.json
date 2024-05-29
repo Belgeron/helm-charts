@@ -38,9 +38,7 @@
     "matchStrings": [
       "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
     ],
-    "datasourceTemplate": "github-tags",
-    "versioningTemplate": "semver",
-    "depNameTemplate": "osism/openstack-project-manager"
+    "datasourceTemplate": "helmv3"
   }
   ]
 }
