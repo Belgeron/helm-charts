@@ -28,17 +28,6 @@
     "datasourceTemplate": "github-tags",
     "versioningTemplate": "semver",
     "depNameTemplate": "osism/openstack-image-manager"
-  },
-  {
-    "customType": "regex",
-    "description": "Update Project Manager Helm",
-    "fileMatch": [
-      "charts/openstack-project-manager/values.ya?ml$", "charts/openstack-project-manager/Chart.ya?ml$"
-    ],
-    "matchStrings": [
-      "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
-    ],
-    "datasourceTemplate": "helmv3"
   }
   ]
 }
