@@ -41,9 +41,8 @@
     "matchStrings": [
       "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
     ],
-    "datasourceTemplate": "docker"
+    "datasourceTemplate": "docker",
     "depNameTemplate": "andischrogl/registry/openstack-project-manager"
-
   }
   ]
 }
