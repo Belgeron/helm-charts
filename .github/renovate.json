@@ -4,10 +4,10 @@
     "config:recommended"
   ],
   "helmv3": {
-    "enabled": false
+    "enabled": true 
   },
   "helm-values": {
-    "enabled": false
+    "enabled": true 
   },
   "packageRules": [
     {
