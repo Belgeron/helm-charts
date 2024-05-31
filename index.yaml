@@ -36,6 +36,19 @@ entries:
     version: v0.20240417.0
   openstack-project-manager:
   - apiVersion: v2
+    appVersion: v1.0.5
+    created: "2024-05-31T14:09:52.523161193Z"
+    description: Helm chart for openstack project manager
+    digest: dc92bed2d2b1459ff984b9b1b3c8a749b6c2b9b1632faa2f2260390e509b314a
+    home: https://osism.tech/docs/guides/operations-guide/openstack/tools/project-manager
+    name: openstack-project-manager
+    sources:
+    - https://github.com/osism/openstack-project-manager
+    type: application
+    urls:
+    - https://github.com/Belgeron/helm-charts/releases/download/openstack-project-manager-v1.0.5/openstack-project-manager-v1.0.5.tgz
+    version: v1.0.5
+  - apiVersion: v2
     appVersion: v1.0.4
     created: "2024-05-31T11:12:21.743446605Z"
     description: Helm chart for openstack project manager
@@ -110,4 +123,4 @@ entries:
     urls:
     - https://github.com/Belgeron/helm-charts/releases/download/openstack-project-manager-v0.1.0/openstack-project-manager-v0.1.0.tgz
     version: v0.1.0
-generated: "2024-05-31T11:12:21.743472222Z"
+generated: "2024-05-31T14:09:52.523228939Z"
