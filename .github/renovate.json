@@ -15,7 +15,7 @@
       "matchDatasources": ["docker"],
       "registryUrls": ["https://registry.gitlab.com"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "pr"
 
     }
   ],
