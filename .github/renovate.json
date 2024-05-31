@@ -12,11 +12,17 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],
-      "automerge": true,
       "matchDatasources": ["docker"],
       "registryUrls": ["https://registry.gitlab.com"]
-
     }
+  ],
+  "packageRules": [
+  {
+    "description": "Automatically merge minor and patch-level updates",
+    "matchUpdateTypes": ["minor", "patch", "digest"],
+    "automerge": true,
+    "automergeType": "branch"
+  }
   ],
   "customManagers": [
   {
