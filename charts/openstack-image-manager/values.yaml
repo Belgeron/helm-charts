@@ -5,7 +5,7 @@ image:
   # Use gitlab.com as registry
   registry: registry.gitlab.com
   image: andischrogl/registry/openstack-image-manager
-  tag: v0.20240417.0
+  tag: v0.20240625.0
   pullPolicy: Always 
 
 # Set the schedule for every run, it's in crontab format, defaults to every sunday at 1am if not set  
