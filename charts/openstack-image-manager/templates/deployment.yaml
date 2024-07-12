@@ -3,20 +3,36 @@ kind: Deployment
 metadata:
    name: {{ .Release.Name }}-manager
    labels:
-     app: openstack-image-manager
+     {{- include "openstack-image-manager.labels" . | nindent 4 }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: openstack-image-manager
+      {{- include "openstack-image-manager.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
-        app: openstack-image-manager
+        {{- include "openstack-image-manager.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
     spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "openstack-image-manager.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
          - name: {{ .Chart.Name }}  
-           image: "{{ .Values.image.registry }}/{{ .Values.image.image }}:{{ .Values.image.tag }}" 
+           securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+           image: "{{ .Values.image.registry }}/{{ .Values.image.image }}:{{ .Values.image.tag | default .Chart.AppVersion }}" 
            imagePullPolicy: {{ .Values.image.pullPolicy }}
            env:
            - name: FILTER
@@ -30,6 +46,9 @@ spec:
              subPath: clouds.yml
              name: clouds-credentials
              readOnly: true
+           - mountPath: "/oim"
+             name: oim-volume
+             readOnly: false
       volumes:
         - name: clouds-credentials
           secret:
@@ -37,3 +56,10 @@ spec:
             items:
               - key: clouds.yml
                 path: clouds.yml
+        - name: oim-volume 
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "openstack-image-manager.fullname" .) }}
+        {{- else }}
+            emptyDir: {}
+        {{- end -}}
