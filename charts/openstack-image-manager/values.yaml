@@ -1,75 +1,48 @@
 # Default Values
+jobs:
+  openstack-image-manager:
+    securityContext:
+      runAsUser: 8000
+      runAsGroup: 8000
+    image:
+      # Use gitlab.com as registry
+      registry: registry.gitlab.com
+      image: andischrogl/registry/openstack-image-manager
+      tag: v0.20240710.0 
+      imagePullPolicy: Always 
+    env:
+      - name: CLOUD
+        #  Set the cloud config from clouds.yml to be used 
+        value: "openstack"
+      - name: FILTER
+        # Set the Filter for Image Names you want to update, leave empty for all images to be updates in repository 
+        # like "CentOS|Cirros|Ubuntu|Debian|openSUSE|Rocky"
+        value: ""
+    # Set the Cron schedule
+    schedule: "0 1 * * 7"
+    serviceAccount:
+      name: "openstack-image-manager"
+    failedJobsHistoryLimit: 1
+    successfulJobsHistoryLimit: 3
+    concurrencyPolicy: Forbid
+    restartPolicy: OnFailure
+    volumeMounts:
+      - mountPath: "/etc/openstack/clouds.yml"
+        subPath: clouds.yml
+        name: oim-clouds-credentials 
+        readOnly: true
+    volumes:
+      - name: oim-clouds-credentials
+        secret:
+          secretName: oim-openstack-image-manager 
+          items:
+            - key: clouds.yml
+              path: clouds.yml
 
-replicaCount: 1
+secrets:
+  clouds-credentials:
+    files:
+      # Set the path to your clouds.yaml file for import
+      # e.g. "/home/user/clouds.yaml"
+      clouds.yml: clouds.yml
 
-image:
-  # Use gitlab.com as registry
-  registry: registry.gitlab.com
-  image: andischrogl/registry/openstack-image-manager
-  tag: v0.20240710.0
-  pullPolicy: Always 
-
-imagePullSecrets: []
-
-persistence:
-  enabled: true
-  ## database data Persistent Volume Storage Class
-  ## If defined, storageClassName: <storageClass>
-  ## If set to "-", storageClassName: "", which disables dynamic provisioning
-  ## If undefined (the default) or set to null, no storageClassName spec is
-  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-  ##   GKE, AWS & OpenStack)
-  ##
-  # storageClass: "-"
-  accessMode: ReadWriteOnce
-  size: 1Gi
-  annotations: {}
-
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Automatically mount a ServiceAccount's API credentials?
-  automount: true
-  # Annotations to add to the service account
-  annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: ""
-
-podAnnotations: {}
-podLabels: {}
-
-podSecurityContext: {}
-  # fsGroup: 2000
-
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
-
-# Set the schedule for every run, it's in crontab format, defaults to every sunday at 1am if not set  
-schedule: "0 1 * * 7"
-
-# Set the Filter for Image Names you want to update, leave empty for all images to be updates in repository
-# example: "CentOS|Debian|Ubuntu"
-filter: ""
-
-# Set the cloud config from clouds.yml to be used
-cloud: "default"
-
-# Generate a secret for clouds.yml
-clouds_yml_config: |
-  clouds.yml: |
-      clouds:
-        default:
-          region_name: your-region-here
-          auth:
-            username: your-user-here
-            password: your-password-here
-            project_name: your-project-here
-            project_domain_name: 'Default'
-            user_domain_name: 'Default'
-            auth_url: 'http://your-url-here:5000/v3'
