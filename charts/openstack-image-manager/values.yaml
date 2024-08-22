@@ -19,7 +19,7 @@ jobs:
         # like "CentOS|Cirros|Ubuntu|Debian|openSUSE|Rocky"
         value: ""
     # Set the Cron schedule
-    schedule: "0 1 * * 7"
+    schedule: "0 1 * * 6"
     serviceAccount:
       name: "openstack-image-manager"
     failedJobsHistoryLimit: 1
