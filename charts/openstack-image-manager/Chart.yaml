@@ -2,8 +2,8 @@ apiVersion: v2
 name: openstack-image-manager
 description: Helm chart for openstack image manager
 type: application
-version: v0.20240812.0
-appVersion: "v0.20240812.0"
+version: v0.20240710.0 
+appVersion: "v0.20240710.0"
 home: https://osism.tech/docs/guides/operations-guide/openstack/tools/image-manager/
 sources:
   - https://github.com/osism/openstack-image-manager

@@ -8,16 +8,18 @@ jobs:
       # Use gitlab.com as registry
       registry: registry.gitlab.com
       image: andischrogl/registry/openstack-image-manager
-      tag: v0.20240812.0
+      tag: v0.20240710.0
       imagePullPolicy: Always 
     env:
       - name: CLOUD
         #  Set the cloud config from clouds.yml to be used 
-        value: "openstack"
+        value: "default"
       - name: FILTER
         # Set the Filter for Image Names you want to update, leave empty for all images to be updates in repository 
         # like "CentOS|Cirros|Ubuntu|Debian|openSUSE|Rocky"
         value: ""
+    # Set your Timezone
+    timezone: "Europe/Berlin"
     # Set the Cron schedule
     schedule: "0 1 * * 6"
     serviceAccount:
@@ -38,11 +40,14 @@ jobs:
           items:
             - key: clouds.yml
               path: clouds.yml
-
-secrets:
-  clouds-credentials:
-    files:
-      # Set the path to your clouds.yaml file for import
-      # e.g. "/home/user/clouds.yaml"
-      clouds.yml: clouds.yml
+    clouds_yml_config: 
+          clouds:
+            default:
+              region_name: your-region-here
+              auth:
+                username: your-user-here
+                password: your-password-here
+                project_name: your-project-here
+                project_domain_name: 'Default'
+                user_domain_name: 'Default'
 
