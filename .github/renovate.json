@@ -4,46 +4,57 @@
     "config:recommended"
   ],
   "helmv3": {
-    "enabled": true 
+    "enabled": true
   },
   "helm-values": {
-    "enabled": true 
+    "enabled": true
   },
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
-      "matchDatasources": ["docker"],
-      "registryUrls": ["https://registry.gitlab.com"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "registryUrls": [
+        "https://registry.gitlab.com"
+      ],
       "automerge": true,
-      "automergeType": "pr"
-
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "*"
+      ]
     }
   ],
   "customManagers": [
-  {
-    "customType": "regex",
-    "description": "Update Image Manager Helm",
-    "fileMatch": [
-      "charts/openstack-image-manager/values.ya?ml$", "charts/openstack-image-manager/Chart.ya?ml$"
-    ],
-    "matchStrings": [
-      "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
-    ],
-    "datasourceTemplate": "github-tags",
-    "versioningTemplate": "semver",
-    "depNameTemplate": "osism/openstack-image-manager"
-  },
-  {
-    "customType": "regex",
-    "description": "Update Project Manager Helm",
-    "fileMatch": [
-      "charts/openstack-project-manager/values.ya?ml$", "charts/openstack-project-manager/Chart.ya?ml$"
-    ],
-    "matchStrings": [
-      "tag: (?<currentValue>.*)", "appVersion: \"(?<currentValue>.*)\"", "version: (?<currentValue>.*)"
-    ],
-    "datasourceTemplate": "docker",
-    "depNameTemplate": "andischrogl/registry/openstack-project-manager"
-  }
+    {
+      "customType": "regex",
+      "description": "Update Image Manager Helm",
+      "fileMatch": [
+        "charts/openstack-image-manager/values.ya?ml$",
+        "charts/openstack-image-manager/Chart.ya?ml$"
+      ],
+      "matchStrings": [
+        "tag: (?<currentValue>.*)",
+        "appVersion: \"(?<currentValue>.*)\"",
+        "version: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver",
+      "depNameTemplate": "osism/openstack-image-manager"
+    },
+    {
+      "customType": "regex",
+      "description": "Update Project Manager Helm",
+      "fileMatch": [
+        "charts/openstack-project-manager/values.ya?ml$",
+        "charts/openstack-project-manager/Chart.ya?ml$"
+      ],
+      "matchStrings": [
+        "tag: (?<currentValue>.*)",
+        "appVersion: \"(?<currentValue>.*)\"",
+        "version: (?<currentValue>.*)"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "andischrogl/registry/openstack-project-manager"
+    }
   ]
 }
