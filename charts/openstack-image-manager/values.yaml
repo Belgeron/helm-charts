@@ -8,7 +8,7 @@ jobs:
       # Use gitlab.com as registry
       registry: registry.gitlab.com
       image: andischrogl/registry/openstack-image-manager
-      tag: v0.20250423.0
+      tag: v0.20250508.0
       imagePullPolicy: Always 
     env:
       - name: CLOUD
