@@ -28,9 +28,9 @@
     {
       "customType": "regex",
       "description": "Update Image Manager Helm",
-      "fileMatch": [
-        "charts/openstack-image-manager/values.ya?ml$",
-        "charts/openstack-image-manager/Chart.ya?ml$"
+      "managerFilePatterns": [
+        "/charts/openstack-image-manager/values.ya?ml$/",
+        "/charts/openstack-image-manager/Chart.ya?ml$/"
       ],
       "matchStrings": [
         "tag: (?<currentValue>.*)",
@@ -44,9 +44,9 @@
     {
       "customType": "regex",
       "description": "Update Project Manager Helm",
-      "fileMatch": [
-        "charts/openstack-project-manager/values.ya?ml$",
-        "charts/openstack-project-manager/Chart.ya?ml$"
+      "managerFilePatterns": [
+        "/charts/openstack-project-manager/values.ya?ml$/",
+        "/charts/openstack-project-manager/Chart.ya?ml$/"
       ],
       "matchStrings": [
         "tag: (?<currentValue>.*)",
